@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/baseTabFragment"
+        android:name="com.example.teslanews.ui.BaseTabFragment"
+        tools:layout="@layout/fragment_base_tab" >
+        <action
+            android:id="@+id/action_baseTabFragment_to_generalNewsDetailFragment"
+            app:destination="@id/generalNewsDetailFragment" />
+        <action
+            android:id="@+id/action_baseTabFragment_to_techNewsDetailFragment"
+            app:destination="@id/techNewsDetailFragment" />
+        <action
+            android:id="@+id/action_baseTabFragment_to_appleNewsDetailFragment"
+            app:destination="@id/appleNewsDetailFragment" />
+        <action
+            android:id="@+id/action_baseTabFragment_to_teslaNewsDetailFragment"
+            app:destination="@id/teslaNewsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.teslanews.ui.fragments.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_baseTabFragment"
+            app:destination="@id/baseTabFragment"
+            app:popUpTo="@id/baseTabFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/generalNewsDetailFragment"
+        android:name="com.example.teslanews.ui.fragments.GeneralNewsDetailFragment"
+        tools:layout="@layout/fragment_general_news_detail">
+        <action
+            android:id="@+id/action_generalNewsDetailFragment_to_baseTabFragment"
+            app:destination="@id/baseTabFragment"
+            app:popUpTo="@id/baseTabFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/techNewsDetailFragment"
+        android:name="com.example.teslanews.ui.fragments.TechNewsDetailFragment"
+        tools:layout="@layout/fragment_tech_news_detail">
+        <action
+            android:id="@+id/action_techNewsDetailFragment_to_baseTabFragment"
+            app:destination="@id/baseTabFragment"
+            app:popUpTo="@id/baseTabFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/appleNewsDetailFragment"
+        android:name="com.example.teslanews.ui.fragments.AppleNewsDetailFragment"
+        tools:layout="@layout/fragment_apple_news_detail">
+        <action
+            android:id="@+id/action_appleNewsDetailFragment_to_baseTabFragment"
+            app:destination="@id/baseTabFragment"
+            app:popUpTo="@id/baseTabFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/teslaNewsDetailFragment"
+        android:name="com.example.teslanews.ui.fragments.TeslaNewsDetailFragment"
+        tools:layout="@layout/fragment_tesla_news_detail">
+        <action
+            android:id="@+id/action_teslaNewsDetailFragment_to_baseTabFragment"
+            app:destination="@id/baseTabFragment"
+            app:popUpTo="@id/baseTabFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
