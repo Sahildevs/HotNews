@@ -22,7 +22,7 @@
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:layout_gravity="center"
-            android:src="@drawable/applogo"/>
+            android:src="@drawable/splashlogo"/>
 
         <Space
             android:layout_width="match_parent"

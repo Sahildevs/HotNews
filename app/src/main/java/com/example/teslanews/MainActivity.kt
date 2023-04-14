@@ -37,15 +37,26 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.appBarLayout.toolBar)
         setupActionBarWithNavController(navController)
 
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
+
+        //Hides up arrow on specified screens
         navController.addOnDestinationChangedListener{controller, destination, arguments ->
             when(destination.id) {
                 R.id.baseTabFragment -> {supportActionBar?.setDisplayHomeAsUpEnabled(false)
-                supportActionBar?.setDisplayShowTitleEnabled(false)}
+                supportActionBar?.setDisplayShowTitleEnabled(false)
+                }
+
+                else -> {
+                    supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
+                    supportActionBar?.setDisplayShowTitleEnabled(false)
+                }
 
             }
+
         }
 
 
+        //Hides the app bar on specified screens
         navController.addOnDestinationChangedListener{controller, destination, arguments ->
 
             when(destination.id) {
@@ -54,6 +65,8 @@ class MainActivity : AppCompatActivity() {
                 else -> supportActionBar?.show()
             }
         }
+
+
 
 
     }

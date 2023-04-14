@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.teslanews.R
 import com.example.teslanews.data.model.TechNewsResponseItem
 import com.example.teslanews.databinding.CellTechNewsBinding
 
@@ -24,7 +25,7 @@ class TechNewsAdapter(private var callback: Callback, private var newsList: Arra
             binding.data = data
             binding.executePendingBindings()
 
-            Glide.with(binding.imageView).load(data.urlToImage).into(binding.imageView)
+            Glide.with(binding.imageView).load(data.urlToImage).placeholder(R.drawable.placeholder).into(binding.imageView)
         }
 
         init {
